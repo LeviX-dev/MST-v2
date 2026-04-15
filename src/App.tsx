@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
@@ -36,7 +36,11 @@ const AnimatedRoutes = () => {
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-
+useEffect(() => {
+  fetch("https://your-render-url.onrender.com/api/visit", {
+    method: "POST",
+  });
+}, []);
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
