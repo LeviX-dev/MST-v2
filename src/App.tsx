@@ -37,7 +37,7 @@ const AnimatedRoutes = () => {
 const App = () => {
   const [loading, setLoading] = useState(true);
 useEffect(() => {
-  fetch("https://email-server-i745.onrender.com", {
+  fetch("https://email-server-i745.onrender.com/api/visit", {
     method: "POST",
   });
 }, []);
